@@ -1,0 +1,700 @@
+<!--Navfloat-->
+#navfloat {
+  position: fixed;
+  z-index: 99999;
+  left: 50%;
+  bottom: 18px;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 7px;
+  border: 1px solid #e1e6e3;
+  border-radius: 50px;
+  background: #fff;
+  color: #26332c;
+  box-shadow: 0 5px 25px rgba(0,0,0,.15);
+  font-size: 24px;
+}
+
+#navfloat .navfloat-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#navfloat .navfloat-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 46px;
+  height: 46px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background .2s, color .2s, transform .2s;
+}
+
+#navfloat .navfloat-link:hover {
+  background: #eaf5ef;
+  color: #08784f;
+  transform: translateY(-2px);
+}
+
+#navfloat .svg-icon {
+  display: block;
+  width: 23px;
+  height: 23px;
+  fill: currentColor;
+}
+
+#navfloat .i-whatsapp {
+  background: #13847b;
+  color: #fff;
+}
+
+#navfloat .i-whatsapp:hover {
+  background: #118952;
+  color: #fff;
+}
+
+#navfloat .i-light {
+  display: none;
+}
+
+/* Dark mode Navfloat */
+html[data-dz-dark=&quot;true&quot;] #navfloat {
+  background: #202a25;
+  color: #f1f5f2;
+  border-color: #39473f;
+}
+
+html[data-dz-dark=&quot;true&quot;] #navfloat .navfloat-link:hover {
+  background: #34483c;
+  color: #8ee1b9;
+}
+
+html[data-dz-dark=&quot;true&quot;] #navfloat .i-whatsapp {
+  background: #16a765;
+  color: #fff;
+}
+
+html[data-dz-dark=&quot;true&quot;] #navfloat .i-dark {
+  display: none;
+}
+
+html[data-dz-dark=&quot;true&quot;] #navfloat .i-light {
+  display: block;
+}
+
+/* Responsif */
+@media (max-width: 480px) {
+  #navfloat {
+    bottom: max(12px, env(safe-area-inset-bottom));
+    gap: 2px;
+    padding: 5px;
+    max-width: calc(100% - 16px);
+  }
+
+  #navfloat .navfloat-link {
+    width: 42px;
+    height: 42px;
+  }
+
+  #navfloat .svg-icon {
+    width: 21px;
+    height: 21px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #navfloat .navfloat-link {
+    transition: none;
+  }
+}
+
+
+/* ========== Dark Mode ========== */
+
+html[data-dz-dark=&quot;true&quot;] {
+  color-scheme: dark !important;
+
+  --bs-body-bg: #121a16;
+  --bs-body-color: #e6eee9;
+  --bs-emphasis-color: #f5faf7;
+  --bs-secondary-color: #b5c3ba;
+  --bs-tertiary-color: #a8b8ad;
+  --bs-secondary-bg: #202a25;
+  --bs-tertiary-bg: #26332c;
+  --bs-border-color: #39483f;
+  --bs-heading-color: #f1f7f3;
+  --bs-link-color: #8ee1b9;
+  --bs-link-hover-color: #b3f3d0;
+  --bs-code-color: #f2b5d4;
+  --bs-form-control-bg: #202a25;
+  --bs-form-control-color: #e6eee9;
+
+  background-color: #121a16 !important;
+}
+
+html[data-dz-dark=&quot;true&quot;],
+html[data-dz-dark=&quot;true&quot;] body {
+  background-color: #121a16 !important;
+  color: #e6eee9 !important;
+}
+
+/* Latar utama dan area konten Blogger */
+html[data-dz-dark=&quot;true&quot;] #outer-wrapper,
+html[data-dz-dark=&quot;true&quot;] #wrapper,
+html[data-dz-dark=&quot;true&quot;] #content-wrapper,
+html[data-dz-dark=&quot;true&quot;] #main-wrapper,
+html[data-dz-dark=&quot;true&quot;] #main,
+html[data-dz-dark=&quot;true&quot;] #sidebar,
+html[data-dz-dark=&quot;true&quot;] #sidebar-wrapper,
+html[data-dz-dark=&quot;true&quot;] #header-wrapper,
+html[data-dz-dark=&quot;true&quot;] #footer-wrapper,
+html[data-dz-dark=&quot;true&quot;] .outer-wrapper,
+html[data-dz-dark=&quot;true&quot;] .content-wrapper,
+html[data-dz-dark=&quot;true&quot;] .main-wrapper,
+html[data-dz-dark=&quot;true&quot;] .main-content,
+html[data-dz-dark=&quot;true&quot;] .sidebar-wrapper,
+html[data-dz-dark=&quot;true&quot;] .header-wrapper,
+html[data-dz-dark=&quot;true&quot;] .footer-wrapper,
+html[data-dz-dark=&quot;true&quot;] .section,
+html[data-dz-dark=&quot;true&quot;] .widget-content {
+  background-color: #121a16 !important;
+  color: #e6eee9 !important;
+}
+
+/* Header, navbar dan navigasi */
+html[data-dz-dark=&quot;true&quot;] header,
+html[data-dz-dark=&quot;true&quot;] .header,
+html[data-dz-dark=&quot;true&quot;] .header-inner,
+html[data-dz-dark=&quot;true&quot;] nav:not(#navfloat),
+html[data-dz-dark=&quot;true&quot;] .navbar,
+html[data-dz-dark=&quot;true&quot;] .navbar-section,
+html[data-dz-dark=&quot;true&quot;] .navbar-collapse,
+html[data-dz-dark=&quot;true&quot;] .dropdown-menu,
+html[data-dz-dark=&quot;true&quot;] .dropdown-item,
+html[data-dz-dark=&quot;true&quot;] .offcanvas,
+html[data-dz-dark=&quot;true&quot;] .offcanvas-header,
+html[data-dz-dark=&quot;true&quot;] .offcanvas-body,
+html[data-dz-dark=&quot;true&quot;] .modal-content,
+html[data-dz-dark=&quot;true&quot;] .modal-header,
+html[data-dz-dark=&quot;true&quot;] .modal-body,
+html[data-dz-dark=&quot;true&quot;] .modal-footer {
+  background-color: #1b2520 !important;
+  color: #e6eee9 !important;
+  border-color: #39483f !important;
+}
+
+/* Artikel, kartu dan widget */
+html[data-dz-dark=&quot;true&quot;] article,
+html[data-dz-dark=&quot;true&quot;] .post,
+html[data-dz-dark=&quot;true&quot;] .post-outer,
+html[data-dz-dark=&quot;true&quot;] .post-outer-container,
+html[data-dz-dark=&quot;true&quot;] .blog-posts,
+html[data-dz-dark=&quot;true&quot;] .post-body,
+html[data-dz-dark=&quot;true&quot;] .post-footer,
+html[data-dz-dark=&quot;true&quot;] .post-header,
+html[data-dz-dark=&quot;true&quot;] .post-snippet,
+html[data-dz-dark=&quot;true&quot;] .card,
+html[data-dz-dark=&quot;true&quot;] .card-body,
+html[data-dz-dark=&quot;true&quot;] .card-header,
+html[data-dz-dark=&quot;true&quot;] .card-footer,
+html[data-dz-dark=&quot;true&quot;] .widget,
+html[data-dz-dark=&quot;true&quot;] .sidebar,
+html[data-dz-dark=&quot;true&quot;] .footer,
+html[data-dz-dark=&quot;true&quot;] .comments,
+html[data-dz-dark=&quot;true&quot;] #comments,
+html[data-dz-dark=&quot;true&quot;] .comment,
+html[data-dz-dark=&quot;true&quot;] .comment-block,
+html[data-dz-dark=&quot;true&quot;] .related-posts,
+html[data-dz-dark=&quot;true&quot;] #related-posts-box,
+html[data-dz-dark=&quot;true&quot;] .breadcrumb,
+html[data-dz-dark=&quot;true&quot;] .list-group-item,
+html[data-dz-dark=&quot;true&quot;] .accordion-item,
+html[data-dz-dark=&quot;true&quot;] .accordion-button {
+  background-color: #1b2520 !important;
+  color: #e6eee9 !important;
+  border-color: #39483f !important;
+}
+
+/* Elemen Bootstrap yang memakai warna latar utilitas */
+html[data-dz-dark=&quot;true&quot;] .bg-body,
+html[data-dz-dark=&quot;true&quot;] .bg-white,
+html[data-dz-dark=&quot;true&quot;] .bg-light,
+html[data-dz-dark=&quot;true&quot;] .bg-body-tertiary,
+html[data-dz-dark=&quot;true&quot;] .bg-body-secondary,
+html[data-dz-dark=&quot;true&quot;] .text-bg-light {
+  background-color: #1b2520 !important;
+  color: #e6eee9 !important;
+}
+
+/* Judul dan teks */
+html[data-dz-dark=&quot;true&quot;] body,
+html[data-dz-dark=&quot;true&quot;] p,
+html[data-dz-dark=&quot;true&quot;] span,
+html[data-dz-dark=&quot;true&quot;] li,
+html[data-dz-dark=&quot;true&quot;] label,
+html[data-dz-dark=&quot;true&quot;] small,
+html[data-dz-dark=&quot;true&quot;] blockquote,
+html[data-dz-dark=&quot;true&quot;] figcaption,
+html[data-dz-dark=&quot;true&quot;] .post-title,
+html[data-dz-dark=&quot;true&quot;] .entry-title,
+html[data-dz-dark=&quot;true&quot;] .widget-title,
+html[data-dz-dark=&quot;true&quot;] .post-snippet,
+html[data-dz-dark=&quot;true&quot;] .text-body,
+html[data-dz-dark=&quot;true&quot;] .text-dark,
+html[data-dz-dark=&quot;true&quot;] .text-secondary,
+html[data-dz-dark=&quot;true&quot;] .text-muted,
+html[data-dz-dark=&quot;true&quot;] .breadcrumb-item,
+html[data-dz-dark=&quot;true&quot;] .page-link {
+  color: #e6eee9 !important;
+}
+
+html[data-dz-dark=&quot;true&quot;] h1,
+html[data-dz-dark=&quot;true&quot;] h2,
+html[data-dz-dark=&quot;true&quot;] h3,
+html[data-dz-dark=&quot;true&quot;] h4,
+html[data-dz-dark=&quot;true&quot;] h5,
+html[data-dz-dark=&quot;true&quot;] h6,
+html[data-dz-dark=&quot;true&quot;] .h1,
+html[data-dz-dark=&quot;true&quot;] .h2,
+html[data-dz-dark=&quot;true&quot;] .h3,
+html[data-dz-dark=&quot;true&quot;] .h4,
+html[data-dz-dark=&quot;true&quot;] .h5,
+html[data-dz-dark=&quot;true&quot;] .h6 {
+  color: #f1f7f3 !important;
+}
+
+/* Tautan */
+html[data-dz-dark=&quot;true&quot;] a:not(.btn):not(.navfloat-link):not(.i-whatsapp) {
+  color: #8ee1b9;
+}
+
+html[data-dz-dark=&quot;true&quot;] a:not(.btn):not(.navfloat-link):not(.i-whatsapp):hover {
+  color: #b3f3d0;
+}
+
+/* Tombol standar */
+html[data-dz-dark=&quot;true&quot;] .btn-light,
+html[data-dz-dark=&quot;true&quot;] .btn-outline-dark,
+html[data-dz-dark=&quot;true&quot;] .btn-outline-secondary {
+  background-color: #26332c !important;
+  color: #e6eee9 !important;
+  border-color: #526257 !important;
+}
+
+/* Form pencarian, komentar dan formulir */
+html[data-dz-dark=&quot;true&quot;] input:not([type=&quot;checkbox&quot;]):not([type=&quot;radio&quot;]):not([type=&quot;submit&quot;]):not([type=&quot;button&quot;]),
+html[data-dz-dark=&quot;true&quot;] textarea,
+html[data-dz-dark=&quot;true&quot;] select,
+html[data-dz-dark=&quot;true&quot;] .form-control,
+html[data-dz-dark=&quot;true&quot;] .form-select {
+  background-color: #202a25 !important;
+  color: #f1f7f3 !important;
+  border-color: #46564b !important;
+}
+
+html[data-dz-dark=&quot;true&quot;] input::placeholder,
+html[data-dz-dark=&quot;true&quot;] textarea::placeholder,
+html[data-dz-dark=&quot;true&quot;] .form-control::placeholder {
+  color: #a8b8ad !important;
+  opacity: 1;
+}
+
+html[data-dz-dark=&quot;true&quot;] input:focus,
+html[data-dz-dark=&quot;true&quot;] textarea:focus,
+html[data-dz-dark=&quot;true&quot;] select:focus,
+html[data-dz-dark=&quot;true&quot;] .form-control:focus,
+html[data-dz-dark=&quot;true&quot;] .form-select:focus {
+  background-color: #26332c !important;
+  color: #f1f7f3 !important;
+  border-color: #65c99b !important;
+  box-shadow: 0 0 0 0.2rem rgba(101, 201, 155, 0.2) !important;
+}
+
+/* Tabel */
+html[data-dz-dark=&quot;true&quot;] table,
+html[data-dz-dark=&quot;true&quot;] thead,
+html[data-dz-dark=&quot;true&quot;] tbody,
+html[data-dz-dark=&quot;true&quot;] tr,
+html[data-dz-dark=&quot;true&quot;] th,
+html[data-dz-dark=&quot;true&quot;] td {
+  color: #e6eee9 !important;
+  border-color: #39483f !important;
+}
+
+html[data-dz-dark=&quot;true&quot;] th,
+html[data-dz-dark=&quot;true&quot;] .table-light {
+  background-color: #26332c !important;
+}
+
+/* Garis, bayangan dan elemen dekoratif */
+html[data-dz-dark=&quot;true&quot;] hr,
+html[data-dz-dark=&quot;true&quot;] .border,
+html[data-dz-dark=&quot;true&quot;] .border-bottom,
+html[data-dz-dark=&quot;true&quot;] .border-top,
+html[data-dz-dark=&quot;true&quot;] .border-start,
+html[data-dz-dark=&quot;true&quot;] .border-end {
+  border-color: #39483f !important;
+}
+
+html[data-dz-dark=&quot;true&quot;] .shadow,
+html[data-dz-dark=&quot;true&quot;] .shadow-sm,
+html[data-dz-dark=&quot;true&quot;] .shadow-lg {
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.25) !important;
+}
+
+/* Pagination */
+html[data-dz-dark=&quot;true&quot;] .page-link {
+  background-color: #202a25 !important;
+  border-color: #39483f !important;
+}
+
+html[data-dz-dark=&quot;true&quot;] .page-item.active .page-link {
+  background-color: #16784f !important;
+  border-color: #16784f !important;
+  color: #ffffff !important;
+}
+
+/* Ikon tema: sembunyikan bulan, tampilkan matahari */
+html[data-dz-dark=&quot;true&quot;] #navfloat .i-dark {
+  display: none !important;
+}
+
+html[data-dz-dark=&quot;true&quot;] #navfloat .i-light {
+  display: block !important;
+}
+
+/* Navfloat tetap kontras */
+html[data-dz-dark=&quot;true&quot;] #navfloat {
+  background-color: #202a25 !important;
+  color: #f1f7f3 !important;
+  border-color: #39483f !important;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.4) !important;
+}
+
+html[data-dz-dark=&quot;true&quot;] #navfloat .navfloat-link {
+  color: #f1f7f3 !important;
+}
+
+html[data-dz-dark=&quot;true&quot;] #navfloat .navfloat-link:hover {
+  background-color: #34483c !important;
+  color: #8ee1b9 !important;
+}
+
+html[data-dz-dark=&quot;true&quot;] #navfloat .i-whatsapp,
+html[data-dz-dark=&quot;true&quot;] #navfloat .i-whatsapp:hover {
+  background-color: #16a765 !important;
+  color: #ffffff !important;
+}
+
+/* Gambar dan video tetap natural */
+html[data-dz-dark=&quot;true&quot;] img,
+html[data-dz-dark=&quot;true&quot;] video,
+html[data-dz-dark=&quot;true&quot;] iframe {
+  filter: none !important;
+}
+
+/* Seleksi teks */
+html[data-dz-dark=&quot;true&quot;] ::selection {
+  background-color: #286548;
+  color: #ffffff;
+}
+
+/* Aksesibilitas */
+@media (prefers-reduced-motion: reduce) {
+  html[data-dz-dark=&quot;true&quot;] *,
+  html[data-dz-dark=&quot;true&quot;] *::before,
+  html[data-dz-dark=&quot;true&quot;] *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+ {
+  filter: brightness(.96);
+}
+  
+/* Navfloat tersembunyi sebelum halaman di-scroll */
+#navfloat {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translate(-50%, 20px);
+  transition: opacity .3s ease, transform .3s ease, visibility .3s ease;
+}
+
+/* Tampilkan setelah halaman di-scroll */
+#navfloat.navfloat-visible {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translate(-50%, 0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #navfloat {
+    transition: none;
+  }
+}
+
+/* Navfloat tersembunyi sebelum halaman di-scroll */
+#navfloat {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translate(-50%, 20px);
+  transition: opacity .3s ease, transform .3s ease, visibility .3s ease;
+}
+
+/* Tampilkan setelah halaman di-scroll */
+#navfloat.navfloat-visible {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translate(-50%, 0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #navfloat {
+    transition: none;
+  }
+}
+
+/* Chat Panel */
+#dz-chat-panel {
+  position: fixed;
+  z-index: 100000;
+  right: 22px;
+  bottom: 88px;
+  width: 350px;
+  max-width: calc(100% - 24px);
+  height: 430px;
+  max-height: calc(100vh - 110px);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateY(15px);
+  transition: opacity .25s ease, transform .25s ease, visibility .25s ease;
+}
+
+#dz-chat-panel.dz-chat-open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+#dz-chat-panel .chat-wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: #fff;
+  color: #26332c;
+  border-radius: 16px;
+  box-shadow: 0 8px 35px rgba(0,0,0,.22);
+}
+
+/* Header Hijau */
+#dz-chat-panel .chat-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+  padding: 14px;
+  background: #13847b;
+  color: #fff;
+}
+
+#dz-chat-panel .chat-avatar {
+  width: 52px;
+  height: 52px;
+  flex-shrink: 0;
+  overflow: hidden;
+  border-radius: 50%;
+  background: rgba(0,0,0,.15);
+  border: 2px solid rgba(255,255,255,.5);
+}
+
+#dz-chat-panel .chat-img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+#dz-chat-panel .chat-profil {
+  flex: 1;
+  min-width: 0;
+  line-height: 1.5;
+}
+
+#dz-chat-panel .chat-name {
+  font-size: 15px;
+  font-weight: 700;
+}
+
+#dz-chat-panel .chat-status {
+  font-size: 12px;
+  color: #e2ffed;
+}
+
+#dz-chat-panel .chat-close {
+  width: 34px;
+  height: 34px;
+  flex-shrink: 0;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  color: #fff;
+  font-size: 27px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+#dz-chat-panel .chat-close:hover {
+  background: rgba(255,255,255,.18);
+}
+
+/* Body Dengan Latar Chat */
+#dz-chat-panel .chat-body {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  padding: 18px 14px;
+  background-color: #e8e5dc;
+  background-image: url(&quot;https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj-ra4UJxYYb3cBqyd6J9_0tlJD8cjfnsHVHM9boUL9hzlA3zMmBUWRnK7SU7zozOnRaQxPjk0loYl4IyPSEPrtAjSweNaow1mwjgIu9-f0wVmgEUzx5tSZ5_9Vxr46qt6er4X2Lf2-An4zKoTkRizQjNAgKmk8_XEcJ5xxQnvCARBGxQGc8taZJyBqvvw/s720-rw/bg-chat.png&quot;);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+#dz-chat-panel .chat-bubble {
+  display: inline-block;
+  position: relative;
+  max-width: 90%;
+  padding: 10px 13px;
+  border-radius: 4px 13px 13px 13px;
+  background: #fff;
+  color: #26332c;
+  font-size: 13px;
+  line-height: 1.65;
+  overflow-wrap: anywhere;
+  box-shadow: 0 2px 5px rgba(0,0,0,.08);
+}
+
+/* Form Pesan */
+#dz-chat-panel .chat-form {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+  padding: 12px;
+  background: #fff;
+  border-top: 1px solid #e5e9e6;
+}
+
+#dz-chat-panel .chat-input {
+  display: block;
+  flex: 1;
+  width: 100%;
+  min-width: 0;
+  height: 42px;
+  padding: 0 12px;
+  border: 0;
+  outline: none;
+  border-radius: 7px;
+  background: #f4f6f5;
+  color: #26332c;
+  font-family: inherit;
+  font-size: 13px;
+  box-shadow: none;
+}
+
+#dz-chat-panel .chat-input:focus {
+  background: #f4f6f5;
+  box-shadow: inset 0 0 0 1px #16a765;
+}
+
+#dz-chat-panel .chat-input::placeholder {
+  color: #8a968e;
+}
+
+#dz-chat-panel .chat-submit {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  flex-shrink: 0;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  color: #16a765;
+  cursor: pointer;
+}
+
+#dz-chat-panel .chat-submit:hover {
+  background: #e9f7ef;
+}
+
+#dz-chat-panel .chat-send-icon {
+  width: 23px;
+  height: 23px;
+  fill: currentColor;
+}
+
+/* Mode Gelap */
+html[data-dz-dark=&quot;true&quot;] #dz-chat-panel .chat-wrapper {
+  background: #1b2520;
+  color: #e6eee9;
+}
+
+html[data-dz-dark=&quot;true&quot;] #dz-chat-panel .chat-body {
+  background-color: #202a25;
+}
+
+html[data-dz-dark=&quot;true&quot;] #dz-chat-panel .chat-bubble {
+  background: #26332c;
+  color: #e6eee9;
+}
+
+html[data-dz-dark=&quot;true&quot;] #dz-chat-panel .chat-form {
+  background: #1b2520;
+  border-color: #39483f;
+}
+
+html[data-dz-dark=&quot;true&quot;] #dz-chat-panel .chat-input {
+  background: #26332c;
+  color: #f1f7f3;
+}
+
+html[data-dz-dark=&quot;true&quot;] #dz-chat-panel .chat-input::placeholder {
+  color: #b5c3ba;
+}
+
+/* Responsif */
+@media (max-width: 480px) {
+  #dz-chat-panel {
+    right: 12px;
+    bottom: 82px;
+    width: calc(100% - 24px);
+    height: 420px;
+    max-height: calc(100vh - 100px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #dz-chat-panel {
+    transition: none;
+  }
+}
