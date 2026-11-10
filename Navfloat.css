@@ -416,34 +416,7 @@ html[data-dz-dark="true"] ::selection {
     scroll-behavior: auto !important;
     transition-duration: 0.01ms !important;
   }
-}
- {
-  filter: brightness(.96);
-}
   
-/* Navfloat tersembunyi sebelum halaman di-scroll */
-#navfloat {
-  opacity: 0;
-  visibility: hidden;
-  pointer-events: none;
-  transform: translate(-50%, 20px);
-  transition: opacity .3s ease, transform .3s ease, visibility .3s ease;
-}
-
-/* Tampilkan setelah halaman di-scroll */
-#navfloat.navfloat-visible {
-  opacity: 1;
-  visibility: visible;
-  pointer-events: auto;
-  transform: translate(-50%, 0);
-}
-
-@media (prefers-reduced-motion: reduce) {
-  #navfloat {
-    transition: none;
-  }
-}
-
 /* Navfloat tersembunyi sebelum halaman di-scroll */
 #navfloat {
   opacity: 0;
