@@ -1,0 +1,338 @@
+/* Search Offcanvas Dzakiedu */
+#searchCanv.offcanvas-search {
+  height: auto;
+  min-height: 220px;
+  max-height: 85vh;
+  overflow-y: auto;
+  border: 0;
+  border-radius: 0 0 20px 20px;
+  background: var(--bs-body-bg, #fff);
+  color: var(--bs-body-color, #212529);
+  box-shadow: 0 12px 35px rgba(0,0,0,.15);
+  z-index: 1090;
+}
+
+#searchCanv .container {
+  max-width: 760px;
+}
+
+#searchCanv .form-control {
+  min-height: 48px;
+  border-radius: 10px;
+  box-shadow: none;
+}
+
+#searchCanv .btn-primary {
+  min-width: 80px;
+  border-radius: 10px;
+}
+
+#searchCanv .form-control:focus {
+  border-color: #198754;
+  box-shadow: 0 0 0 3px rgba(25,135,84,.12);
+}
+
+html[data-dz-dark="true"] #searchCanv {
+  background: #1f2329;
+  color: #f1f3f5;
+}
+
+html[data-dz-dark="true"] #searchCanv .form-control {
+  background: #292e35;
+  border-color: #454b54;
+  color: #fff;
+}
+
+html[data-dz-dark="true"] #searchCanv .form-control::placeholder {
+  color: #adb5bd;
+}
+
+html[data-dz-dark="true"] #searchCanv .btn-close {
+  filter: invert(1);
+}
+
+
+/* Navfloat Search */
+#searchCanv.offcanvas-search {
+  position: fixed !important;
+  top: 0 !important;
+  right: 0 !important;
+  left: 0 !important;
+  bottom: auto !important;
+  width: 100% !important;
+  height: auto !important;
+  max-height: 85vh !important;
+  overflow-y: auto !important;
+  z-index: 20000 !important;
+  visibility: hidden !important;
+  display: block !important;
+  transform: translateY(-110%) !important;
+  transition: transform .3s ease, visibility .3s ease !important;
+  background: #fff;
+  color: #212529;
+  border: 0;
+  border-radius: 0 0 18px 18px;
+  box-shadow: 0 10px 35px rgba(0,0,0,.18);
+}
+
+#searchCanv.offcanvas-search.nf-search-open {
+  visibility: visible !important;
+  transform: translateY(0) !important;
+}
+
+html[data-dz-dark="true"] #searchCanv.offcanvas-search {
+  background: #20252b;
+  color: #f5f5f5;
+}
+
+#searchCanv .searchCanv-form input {
+  min-width: 0;
+  flex: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #searchCanv.offcanvas-search {
+    transition: none !important;
+  }
+}
+
+
+/* Hasil Pencarian Navfloat */
+#searchCanvResults {
+  margin-top: 18px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+}
+
+#searchCanvResults .search-result-info {
+  margin: 0;
+  padding: 12px 0;
+  font-size: 14px;
+  opacity: .75;
+}
+
+#searchCanvResults .search-result-item {
+  display: block;
+  padding: 13px 15px;
+  border: 1px solid rgba(128,128,128,.2);
+  border-radius: 12px;
+  color: inherit;
+  text-decoration: none;
+  transition: background .2s ease;
+}
+
+#searchCanvResults .search-result-item:hover {
+  background: rgba(128,128,128,.08);
+}
+
+#searchCanvResults .search-result-title {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+#searchCanvResults .search-result-summary {
+  display: block;
+  font-size: 13px;
+  line-height: 1.6;
+  opacity: .75;
+}
+
+#searchCanvResults .search-result-item:focus-visible {
+  outline: 2px solid #198754;
+  outline-offset: 2px;
+}
+
+
+/* Navfloat tampil di smartphone */
+@media screen and (max-width: 767px) {
+  #navfloat {
+    display: flex !important;
+    pointer-events: auto !important;
+    position: fixed !important;
+    bottom: 18px !important;
+    left: 50% !important;
+    right: auto !important;
+    z-index: 99999 !important;
+    transform: translateX(-50%) !important;
+  }
+
+  #navfloat.navfloat-visible {
+    display: flex !important;
+	visibility: visible !important;
+    opacity: 1 !important;
+    pointer-events: auto !important;
+  }
+}
+
+
+/* =================================================sh
+   Daftar Isi (TOC)
+   ================================================== */
+
+/* --- 1. Daftar Isi (TOC) --- */
+.toc-wrap {
+  background: #fdfdfd;
+  border: 1px solid #e2e8f0;
+  border-left: 4px solid #8c8c8c;
+  border-radius: 8px;
+  padding: 16px 20px;
+  margin: 24px 0;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.02);
+}
+
+.toc-btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: transparent;
+  border: none;
+  width: 100%;
+  padding: 0;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #1e293b;
+  cursor: pointer;
+  text-align: left;
+}
+
+.toc-btn .svg-icon {
+  width: 18px;
+  height: 18px;
+  fill: currentColor;
+  color: #0f172a;
+  flex-shrink: 0;
+}
+
+.toc-btn::after {
+  content: "";
+  margin-left: auto;
+  width: 7px;
+  height: 7px;
+  border-right: 2px solid #64748b;
+  border-bottom: 2px solid #64748b;
+  transform: rotate(45deg);
+  transition: transform 0.3s ease;
+}
+
+.toc-btn[aria-expanded="false"]::after {
+  transform: rotate(-135deg);
+}
+
+.collapse-content {
+  overflow: hidden;
+  transition: max-height 0.3s ease, opacity 0.3s ease;
+  max-height: 2500px;
+  opacity: 1;
+  margin-top: 12px;
+}
+
+.collapse-content.is-hidden {
+  max-height: 0;
+  opacity: 0;
+  margin-top: 0;
+  pointer-events: none;
+}
+
+.toc-inner .ul-tight {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.toc-inner .ul-tight .ul-tight {
+  padding-left: 18px;
+  margin-top: 6px;
+  margin-bottom: 6px;
+  border-left: 1px dashed #cbd5e1;
+}
+
+.toc-inner li {
+  margin-bottom: 6px;
+  font-size: 0.92rem;
+}
+
+.toc-inner a {
+  color: #475569;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.toc-inner a:hover {
+  color: #0d6efd;
+  text-decoration: underline;
+}
+
+/* --- 2. Tombol (Buttons) --- */
+.btn, .button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 20px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  border-radius: 6px;
+  border: 1px solid transparent;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-primary {
+  background-color: #04857e;
+  color: #fff;
+}
+.btn-primary:hover {
+  background-color: #04857e;
+  color: #fff;
+}
+
+.btn-outline {
+  background-color: transparent;
+  border-color: #cbd5e1;
+  color: #334155;
+}
+.btn-outline:hover {
+  background-color: #f1f5f9;
+  border-color: #94a3b8;
+}
+
+/* --- 3. Blockquote / Callout Box --- */
+blockquote {
+  margin: 20px 0;
+  padding: 16px 20px;
+  background: #f8fafc;
+  border-left: 4px solid #0d6efd;
+  border-radius: 0 8px 8px 0;
+  color: #334155;
+  font-style: normal;
+}
+blockquote p {
+  margin-bottom: 0;
+}
+
+/* --- 4. Tabel Responsif --- */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  font-size: 0.92rem;
+}
+
+table th, table td {
+  padding: 12px 14px;
+  border: 1px solid #e2e8f0;
+  text-align: left;
+}
+
+table th {
+  background-color: #f1f5f9;
+  font-weight: 600;
+  color: #1e293b;
+}
+
+table tr:nth-child(even) {
+  background-color: #f8fafc;
+}
