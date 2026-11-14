@@ -1,0 +1,141 @@
+#related-posts-box {
+        margin: 30px 0;
+        font-family: inherit;
+        min-width: 0;
+      }
+
+      /* Tampilan desktop: tiga kolom */
+      #related-posts-list {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 16px;
+      }
+
+      #related-posts-box .related-card {
+        min-width: 0;
+        overflow: hidden;
+        border: 2px solid #e5e5e5;
+        border-radius: 8px;
+        background: var(--bs-body-bg, #fff);
+        box-sizing: border-box;
+      }
+
+      #related-posts-box .related-card > a {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        color: inherit;
+        text-decoration: none;
+      }
+
+      #related-posts-box .related-card img {
+        display: block;
+        width: 100%;
+        aspect-ratio: 16 / 9;
+        object-fit: cover;
+        background: #eee;
+      }
+
+      #related-posts-box .related-content {
+        min-width: 0;
+        padding: 12px;
+        overflow-wrap: anywhere;
+        box-sizing: border-box;
+      }
+
+      #related-posts-box .related-card h4 {
+        margin: 0 0 8px;
+        font-size: 15px;
+        line-height: 1.5;
+        font-weight: 600;
+      }
+
+      #related-posts-box .related-card p {
+        margin: 0;
+        font-size: 13px;
+        line-height: 1.6;
+        color: var(--bs-secondary-color, #666);
+      }
+
+      /* Tablet dan smartphone */
+      @media (max-width: 768px) {
+
+        #related-posts-list {
+          grid-template-columns: 1fr;
+          gap: 12px;
+        }
+
+        #related-posts-box .related-card > a {
+          flex-direction: row;
+          align-items: stretch;
+          min-height: 100px;
+        }
+
+        #related-posts-box .related-card img {
+          width: 120px;
+          min-width: 120px;
+          max-width: 120px;
+          height: auto;
+          min-height: 100px;
+          aspect-ratio: auto;
+          object-fit: cover;
+          align-self: stretch;
+        }
+
+        #related-posts-box .related-content {
+          flex: 1;
+          min-width: 0;
+          padding: 10px 12px;
+        }
+
+        #related-posts-box .related-card h4 {
+          font-size: 14px;
+          line-height: 1.45;
+          margin-bottom: 5px;
+          display: -webkit-box;
+          -webkit-box-orient: vertical;
+          -webkit-line-clamp: 2;
+          line-clamp: 2;
+          overflow: hidden;
+        }
+
+        #related-posts-box .related-card p {
+          font-size: 12px;
+          line-height: 1.5;
+          display: -webkit-box;
+          -webkit-box-orient: vertical;
+          -webkit-line-clamp: 2;
+          line-clamp: 2;
+          overflow: hidden;
+        }
+      }
+
+      /* Smartphone kecil */
+      @media (max-width: 380px) {
+
+        #related-posts-box .related-card > a {
+          min-height: 88px;
+        }
+
+        #related-posts-box .related-card img {
+          width: 100px;
+          min-width: 100px;
+          max-width: 100px;
+          min-height: 88px;
+        }
+
+        #related-posts-box .related-content {
+          padding: 8px 10px;
+        }
+
+        #related-posts-box .related-card h4 {
+          font-size: 13px;
+          line-height: 1.4;
+          margin-bottom: 4px;
+        }
+
+        #related-posts-box .related-card p {
+          font-size: 11px;
+          line-height: 1.4;
+        }
+      }
